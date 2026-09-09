@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>The Obelisk — QRCodedLife</title>
+    <meta
+      name="description"
+      content="Navigate a 3D model of the QRCodedLife exhibition obelisk."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7'%3E%3Cpath fill='%23111' d='M0 0h3v3H0zM4 0h3v3H4zM0 4h3v3H0zM4 4h1v1H4zM6 4h1v1H6zM5 5h1v1H5zM4 6h1v1H4zM6 6h1v1H6z'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/obelisk.css" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../assets/vendor/three/three.module.min.js",
+          "three/addons/controls/OrbitControls.js": "../../assets/vendor/three/OrbitControls.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="stage">
+      <canvas class="stage__canvas" id="scene"></canvas>
+      <div class="stage__status" id="status">Loading the obelisk…</div>
+    </div>
+
+    <div class="hud">
+      <div class="hud__topbar">
+        <a class="hud__back" href="../../index.html">&larr; All prototypes</a>
+        <span class="hud__title">The Obelisk</span>
+      </div>
+
+      <div class="hud__controls">
+        <button class="btn btn--icon" id="zoom-in" type="button" aria-label="Zoom in">+</button>
+        <button class="btn btn--icon" id="zoom-out" type="button" aria-label="Zoom out">&minus;</button>
+        <button class="btn btn--icon" id="reset-view" type="button" aria-label="Reset view">&#8635;</button>
+      </div>
+
+      <p class="hud__hint" id="hint">Drag to rotate &middot; scroll to zoom &middot; tap a QR code</p>
+    </div>
+
+    <dialog class="modal" id="qr-modal" aria-labelledby="qr-modal-title">
+      <div class="modal__inner">
+        <button class="modal__close" id="qr-modal-close" type="button" aria-label="Close">&times;</button>
+        <p class="modal__eyebrow" id="qr-modal-eyebrow">QR code</p>
+        <h2 class="modal__title" id="qr-modal-title"></h2>
+        <div class="modal__body" id="qr-modal-body"></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="../../assets/js/obelisk/main.js"></script>
+  </body>
+</html>

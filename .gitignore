@@ -1,0 +1,14 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Node (only if a dev server or tooling is added later)
+node_modules/
+npm-debug.log*
+
+# Local Claude Code config (machine-specific paths / permissions)
+.claude/
