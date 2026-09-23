@@ -127,6 +127,13 @@ a {
   pointer-events: none;
 }
 
+/* ---- standalone QR content page (Prototype 3) --------------------------- */
+.page__back {
+  display: inline-flex;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
 /* ---- buttons ----------------------------------------------------------- */
 .btn {
   appearance: none;

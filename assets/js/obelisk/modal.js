@@ -71,3 +71,7 @@ export function openModal(qrId) {
 export function isModalOpen() {
   return Boolean(dialog && dialog.open);
 }
+
+export function closeModal() {
+  if (dialog && dialog.open) dialog.close();
+}

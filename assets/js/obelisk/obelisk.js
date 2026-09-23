@@ -334,3 +334,13 @@ export function setPanelHover(panel, hovered) {
   panel.material.emissiveIntensity = hovered ? 0.4 : 0;
   panel.scale.setScalar(hovered ? 1.03 : 1);
 }
+
+/* ---- enable/disable (link-format prototypes only show a few live QRs) */
+export function setPanelEnabled(panel, enabled) {
+  panel.userData.disabled = !enabled;
+  panel.traverse((obj) => {
+    if (!obj.material) return;
+    obj.material.transparent = true;
+    obj.material.opacity = enabled ? 1 : 0.22;
+  });
+}
